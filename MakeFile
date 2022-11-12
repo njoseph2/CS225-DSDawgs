@@ -1,0 +1,7 @@
+EXE = 
+Test = test
+
+Exe_OBJ = main.o
+OBJS - BFS.o
+
+include make.mk
