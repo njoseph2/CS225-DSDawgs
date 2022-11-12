@@ -26,6 +26,8 @@ We believe a good time commitment for the final project will be 3 hours outside 
 
 We will resolve situations with disagreement by creating a pros and cons list, weighing the benefits and drawbacks of each team member's ideas, and making decisions based on which solution has the most potential, avoiding the solutions with more complications. If a team member is late than 5:05 PM to a meeting, they must bring food to the next meeting to boost the team's morale. If we have issues with our code and have trouble debugging, we will communicate via our discord group chat to see if other team members have an idea for a solution remotely. If not, this will be a major discussion point during our meetings.
 
+If a team member repeatedly violates any section(s) of this contract (i.e. skipping meetings, disrespect, etc), we will alert 1) the team member with a warning, then 2) our project mentor to resolve the issue. We don't anticipate this being the case, but are willing to take the steps necessary for correction.
+
 ## Signatures
 
 Nathan Joseph (Njoseph4)
