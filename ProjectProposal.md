@@ -4,7 +4,9 @@
 
 For our final project, we chose to look at the twitch-gamers dataset at http://snap.stanford.edu/data/twitch_gamers.html and investigate the viewerbase connection with streamers on the livestreaming platform. This dataset contains two CSV files, one of which contains viewer relations between two Twitch channels, and another which contains data on streamers such as their max view count, language, and channel id.
 
-Our goal is to learn more about how the Twitch community interacts with one another by using the PageRank algorithm to find which streaming channel contained the most diverse/varied Twitch community and use the force-directed graph drawing algorithms in order to showcase the Twitch communities interactivity visually. More specifically, we want to see which twitch gamers are the most interconnected with other gamers based on sharing at least one common viewer.
+Our goal is to learn more about how the Twitch community interacts with one another by using the PageRank algorithm to find which streaming channel contained the most diverse/varied Twitch community and use the force-directed graph drawing algorithms in order to showcase the Twitch communities interactivity visually. More specifically, we want to see which twitch gamers are the most interconnected with other gamers based on sharing at least one common viewer. 
+
+We plan to do this through the use of a Breadth-first search (BFS) traversal.
 
 ## Dataset Acquisition
 
@@ -19,7 +21,7 @@ We will then go through our edges csv file, creating edges between specified nod
 
 
 ## Data Storage
-We will store our data in Graph. We will implement this graph as an Adjaceny list as Adjaceny lists have a space complexity of only O(m + n) where m is the number of edges and n is number of verticies. We will implement this Adjaceny List using an Array of Linked lists. Each entry in our Array will represent a vertex and the linked list of each entry will contain pointers to edges in our edge list. Our edge list will be linked list containing edges and the verticies they connect. We will also be using a stack data structure to implement our DFS. 
+We will store our data in Graph. We will implement this graph as an Adjaceny list as Adjacency lists have a space complexity of only O(m + n) where m is the number of edges and n is number of verticies. We will implement this Adjaceny List using an Array of Linked lists. Each entry in our Array will represent a vertex and the linked list of each entry will contain pointers to edges in our edge list. Our edge list will be linked list containing edges and the verticies they connect. We will also be using a stack data structure to implement our DFS. 
 
 
 
