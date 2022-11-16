@@ -30,7 +30,7 @@ We will store our data in Graph. We will implement this graph as an Adjaceny lis
 
 
 ### Algorithm 
-The data is stored in a CSV file outlining each major twitch gamer's ID and the ID of another user they are connected to. We plan to use the Pagerank formula to determine what weights should be assigned to each user based on number of connections with other users. After determining these assigned weights, we will utilize the force directed graph drawing algorithm to visually display this information in the form of large circular points and interconnected edges, using the forces to closer group the streamers that have more viewers in common. 
+The data is stored in a CSV file outlining each major twitch gamer's ID and the ID of another user they are connected to. We plan to use the PageRank formula to determine what weights should be assigned to each user based on number of connections with other users. After determining these assigned weights, we will utilize the force directed graph drawing algorithm to visually display this information in the form of large circular points and interconnected edges, using the forces to closer group the streamers that have more viewers in common. The specific inputs and outputs for our specific project is still unclear, but will will know after implementing the algorithms.
 
 The expected outcome is some sort of graphviz file that will clearly display the interconnectedness of twitch streamers. Ideally we want to be able to color code either based on different streaming genres or different users, but that can be determined in the visualization stage of the project.
 
