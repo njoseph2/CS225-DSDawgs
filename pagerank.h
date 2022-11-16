@@ -1,13 +1,13 @@
 #pragma once
 
-#include <vector>
 #include "BFS.h"
 
 class PageRank {
     public:
-        void integrate();
+        void integrate(std::vector<std::vector<std::string>> csv);
         void algorithm();
     private:
-        std::vector<std::pair<Vertex, double>> original;
-        std::vector<std::pair<Vertex, double>> modified;
+        std::map<std::string, std::vector<string>> edges;
+        std::map<std::string, double> original;
+        std::map<std::string, double> modified;
 };
