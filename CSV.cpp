@@ -1,6 +1,6 @@
-#include "CVS.h"
+#include "CSV.h"
 
-std::vector<std::vector<std::string>> readCVS(const std::string & file) {
+std::vector<std::vector<std::string>> readCSV(const std::string & file) {
     std::ifstream channels;
     channels.open(file);
     std::vector<std::vector<std::string>> result;

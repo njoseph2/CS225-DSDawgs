@@ -5,4 +5,4 @@
 #include <iostream>
 #include <fstream>
 
-std::vector<std::vector<std::string>> readCVS(const std::string & file);
+std::vector<std::vector<std::string>> readCSV(const std::string & file);
