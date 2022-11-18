@@ -9,8 +9,7 @@ all: $(EXECUTABLE)
 $(EXECUTABLE):
 	$(CC) $(CFLAGS) $(LDFLAGS) $(SOURCES) -o $@
 
-test:
-	$(CC) $(CFLAGS) $(LDFLAGS) testcsv.cpp graph.cpp CSV.cpp pagerank.cpp -o test
-
 clean:
-	rm $(EXECUTABLE)
+	-rm $(EXECUTABLE)
+tests: tests.cpp
+	$(CC) $(CFLAGS) $(LDFLAGS) $^
