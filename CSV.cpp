@@ -14,8 +14,19 @@ std::vector<std::vector<std::string>> readCSV(const std::string & file) {
     while (channels.peek() != EOF) {
         std::string id;
         std::vector<std::string> vec;
-        while (std::getline(channels, id, ',')) {
-            vec.push_back(id);
+        while (std::getline(channels, id, '\n')) {
+            std::cout << id << std::endl;
+            std::string token;
+            std::string delimiter = ",";
+            size_t pos = 0;
+            while ((pos = id.find(delimiter)) != std::string::npos) {
+                token = id.substr(0,pos);
+                std::cout << token << std::endl;
+                vec.push_back(token);
+                id.erase(0,pos+delimiter.length());
+            }
+            result.push_back(vec);
+            std::cout << "NEXT" << std::endl;
         }
         result.push_back(vec);
     }

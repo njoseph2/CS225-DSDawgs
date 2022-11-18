@@ -38,6 +38,12 @@ void PageRank::algorithm() {
     }
 }
 
-void PageRank::expressRanks() {
-    //print out the ranks
+double PageRank::expressRanks() {
+    double highest = 0;
+    for (auto node : modified) {
+        if (node.second > highest) {
+            highest = node.second;
+        }
+    }
+    return highest;
 }
