@@ -15,14 +15,20 @@ void PageRank::integrate(std::vector<std::vector<std::string>> csv) {
         // }
     }
     for (auto const& x : edges) {
-        original[x.first] = 1 / edges.size();
-        modified[x.first] = 1 / edges.size();
+        original[x.first] = 1.0 / edges.size();
+        modified[x.first] = 1.0 / edges.size();
+
+        // std::cout << x.first << " (";
+        // for (std::string relation : x.second) {
+        //     std::cout << relation;
+        // }
+        // std::cout << ") - " << modified[x.first] << std::endl;
     }
 }
 
 void PageRank::algorithm() {
     //The more iterations, the more accurate the rank
-    int iterations = 5;
+    int iterations = 1;
     for (int i = 0; i < iterations; i++) {
         //go through every vertex
         for (auto node : edges) {
@@ -38,6 +44,16 @@ void PageRank::algorithm() {
     }
 }
 
-void PageRank::expressRanks() {
-    //print out the ranks
+double PageRank::expressRanks() {
+    double highest = 0;
+    std::string highestId;
+    for (auto node : modified) {
+        //std::cout << node.first << " - " << node.second << std::endl;
+        if (node.second > highest) {
+            highest = node.second;
+            highestId = node.first;
+        }
+    }
+    std::cout << highestId << std::endl;
+    return highest;
 }

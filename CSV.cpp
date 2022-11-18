@@ -11,13 +11,32 @@ std::vector<std::vector<std::string>> readCSV(const std::string & file) {
     }
 
     //goes until end of file
-    while (channels.peek() != EOF) {
-        std::string id;
-        std::vector<std::string> vec;
-        while (std::getline(channels, id, ',')) {
+    bool first = true;
+    std::string id;
+    while (std::getline(channels, id, '\n')) {
+        if (!first) {
+            std::vector<std::string> vec;
+            std::string token;
+            std::string delimiter = ",";
+            size_t pos = 0;
+            while ((pos = id.find(delimiter)) != std::string::npos) {
+                token = id.substr(0 ,pos);
+                vec.push_back(token);
+                id.erase(0,pos + delimiter.length());
+            }
             vec.push_back(id);
+            result.push_back(vec);
+        } else {
+            first = false;
         }
-        result.push_back(vec);
     }
+
+    // for (auto a : result) {
+    //     for (auto b : a) {
+    //         std::cout << b << std::endl;
+    //     }
+    //     std::cout << "NEXT" << std::endl;
+    // }
+    // std::cout << "END" << std::endl;
     return result;
 }
