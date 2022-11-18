@@ -9,6 +9,6 @@ int main() {
     PageRank run;
     run.integrate(file);
     run.algorithm();
-    //std::cout << run.expressRanks() << std::endl;
+    std::cout << run.expressRanks() << std::endl;
     return 0;
 };
