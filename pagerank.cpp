@@ -37,3 +37,7 @@ void PageRank::algorithm() {
         original = modified;
     }
 }
+
+void PageRank::expressRanks() {
+    //print out the ranks
+}
