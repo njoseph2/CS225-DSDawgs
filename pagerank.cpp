@@ -18,11 +18,11 @@ void PageRank::integrate(std::vector<std::vector<std::string>> csv) {
         original[x.first] = 1.0 / edges.size();
         modified[x.first] = 1.0 / edges.size();
 
-        std::cout << x.first << " (";
-        for (std::string relation : x.second) {
-            std::cout << relation;
-        }
-        std::cout << ") - " << modified[x.first] << std::endl;
+        // std::cout << x.first << " (";
+        // for (std::string relation : x.second) {
+        //     std::cout << relation;
+        // }
+        // std::cout << ") - " << modified[x.first] << std::endl;
     }
 }
 
@@ -46,11 +46,14 @@ void PageRank::algorithm() {
 
 double PageRank::expressRanks() {
     double highest = 0;
+    std::string highestId;
     for (auto node : modified) {
-        std::cout << node.first << " - " << node.second << std::endl;
+        //std::cout << node.first << " - " << node.second << std::endl;
         if (node.second > highest) {
             highest = node.second;
+            highestId = node.first;
         }
     }
+    std::cout << highestId << std::endl;
     return highest;
 }
