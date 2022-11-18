@@ -11,5 +11,6 @@ $(EXECUTABLE):
 
 clean:
 	-rm $(EXECUTABLE)
+
 tests: tests.cpp
 	$(CC) $(CFLAGS) $(LDFLAGS) $^
