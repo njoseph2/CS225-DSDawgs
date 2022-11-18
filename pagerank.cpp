@@ -21,5 +21,19 @@ void PageRank::integrate(std::vector<std::vector<std::string>> csv) {
 }
 
 void PageRank::algorithm() {
-
+    //The more iterations, the more accurate the rank
+    int iterations = 5;
+    for (int i = 0; i < iterations; i++) {
+        //go through every vertex
+        for (auto node : edges) {
+            double rank = 0;
+            //look at vertex's connections (other nodes)
+            for (std::string connections : node.second) {
+                //add rank of connections divided by the size of their connections
+                rank  += original[connections] / edges[connections].size(); 
+            }
+            modified[node.first] = rank;
+        }
+        original = modified;
+    }
 }
