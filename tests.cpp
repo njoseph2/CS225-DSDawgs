@@ -16,3 +16,15 @@ TEST_CASE("Test1", "[board_init]") {
   std::string t = "test";
   REQUIRE(t == "test");
 }
+
+TEST_CASE("Test2", "[board_init]") {
+  // SECTION("Can use sections") {}
+  std::string t = "test";
+  REQUIRE(t == "test");
+}
+
+TEST_CASE("Test3", "[board_init]") {
+  // SECTION("Can use sections") {}
+  std::string t = "test";
+  REQUIRE(t == "test");
+}
