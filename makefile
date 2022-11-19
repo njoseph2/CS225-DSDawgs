@@ -13,4 +13,4 @@ clean:
 	-rm $(EXECUTABLE)
 
 tests: tests.cpp
-	$(CC) $(CFLAGS) $(LDFLAGS) $^
+	$(CC) $(CFLAGS) $(LDFLAGS) graph.cpp CSV.cpp pagerank.cpp $^

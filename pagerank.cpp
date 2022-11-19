@@ -28,7 +28,7 @@ void PageRank::integrate(std::vector<std::vector<std::string>> csv) {
 
 void PageRank::algorithm() {
     //The more iterations, the more accurate the rank
-    int iterations = 1;
+    int iterations = 3;
     for (int i = 0; i < iterations; i++) {
         //go through every vertex
         for (auto node : edges) {
@@ -48,12 +48,16 @@ double PageRank::expressRanks() {
     double highest = 0;
     std::string highestId;
     for (auto node : modified) {
-        //std::cout << node.first << " - " << node.second << std::endl;
+        std::cout << node.first << " - " << node.second << std::endl;
         if (node.second > highest) {
             highest = node.second;
             highestId = node.first;
         }
     }
-    std::cout << highestId << std::endl;
+    //std::cout << highestId << std::endl;
     return highest;
+}
+
+std::map<std::string, double> PageRank::getOriginal() {
+    return original;
 }
