@@ -44,6 +44,22 @@ void PageRank::algorithm() {
     }
 }
 
+//Implementation of the pagerank surfer model
+void PageRank::floatSurfer(double d) {
+    // int s = number of nodes;
+    // int random = rand % s;
+    // int teleport = 0;
+    // int iterations = 20;
+    // for (int i = 0; i < iterations; i++) {
+    //     while (teleport < (int)(d * 100)) {
+    //         surferCount[random]->second += 1;
+    //         int next = rand % edges[random]->second.size();
+    //         teleport = (rand % 100) + 1;
+    //     }
+    //     random = rand % s;
+    // }
+}
+
 double PageRank::expressRanks() {
     double highest = 0;
     std::string highestId;
