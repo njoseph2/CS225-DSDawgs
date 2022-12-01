@@ -8,7 +8,7 @@ class PageRank {
     public:
         void integrate(std::vector<std::vector<std::string>> csv);
         void algorithm();
-        double expressRanks();
+        double expressRanks(int alg);
         std::map<std::string, double> getOriginal();
         void floatSurfer(double d);
     private:

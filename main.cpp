@@ -10,6 +10,7 @@ int main() {
     PageRank run;
     run.integrate(file);
     run.algorithm();
-    std::cout << run.expressRanks() << std::endl;
+    run.floatSurfer(0.85);
+    std::cout << run.expressRanks(2) << std::endl;
     return 1;
 };

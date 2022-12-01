@@ -66,18 +66,32 @@ void PageRank::floatSurfer(double d) {
     }
 }
 
-double PageRank::expressRanks() {
-    double highest = 0;
-    std::string highestId;
-    for (auto node : modified) {
-        std::cout << node.first << " - " << node.second << std::endl;
-        if (node.second > highest) {
-            highest = node.second;
-            highestId = node.first;
+double PageRank::expressRanks(int alg) {
+    if (alg == 1) {
+        double highest = 0;
+        std::string highestId;
+        for (auto node : modified) {
+            std::cout << node.first << " - " << node.second << std::endl;
+            if (node.second > highest) {
+                highest = node.second;
+                highestId = node.first;
+            }
         }
+        //std::cout << highestId << std::endl;
+        return highest;
+    } else {
+        double highest = 0;
+        for (auto node : surferCount) {
+            double rank = (node.second * 1.0) / surferCount.size();
+            std::cout << node.first << " - " << rank << std::endl;
+            if (node.second > highest) {
+                highest = node.second;
+                highestId = node.first;
+            }
+        }
+        return highest;
     }
-    //std::cout << highestId << std::endl;
-    return highest;
+    
 }
 
 std::map<std::string, double> PageRank::getOriginal() {
