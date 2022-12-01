@@ -77,7 +77,6 @@ double PageRank::expressRanks(int alg) {
                 highestId = node.first;
             }
         }
-        //std::cout << highestId << std::endl;
         return highest;
     } else {
         double highest = 0;
