@@ -17,6 +17,8 @@ void PageRank::integrate(std::vector<std::vector<std::string>> csv) {
     for (auto const& x : edges) {
         original[x.first] = 1.0 / edges.size();
         modified[x.first] = 1.0 / edges.size();
+        surferCount[x.first] = 0;
+        indexs.push_back(x.first);
 
         // std::cout << x.first << " (";
         // for (std::string relation : x.second) {
@@ -46,18 +48,22 @@ void PageRank::algorithm() {
 
 //Implementation of the pagerank surfer model
 void PageRank::floatSurfer(double d) {
-    // int s = number of nodes;
-    // int random = rand % s;
-    // int teleport = 0;
-    // int iterations = 20;
-    // for (int i = 0; i < iterations; i++) {
-    //     while (teleport < (int)(d * 100)) {
-    //         surferCount[random]->second += 1;
-    //         int next = rand % edges[random]->second.size();
-    //         teleport = (rand % 100) + 1;
-    //     }
-    //     random = rand % s;
-    // }
+    int s = surferCount.size();
+    int random = rand() % s;
+    int teleport = 0;
+    int iterations = 20;
+    std::string store;
+    for (int i = 0; i < iterations; i++) {
+        store = indexs[random];
+        while (teleport < (int)(d * 100)) {
+            surferCount[store] += 1;
+            int next = rand() % edges[indexs[random]].size();
+            int count = 0;
+            store = edges[indexs[random]].at(next);
+            teleport = (rand() % 100) + 1;
+        }
+        random = rand() % s;
+    }
 }
 
 double PageRank::expressRanks() {

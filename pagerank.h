@@ -2,6 +2,7 @@
 
 #include "BFS.h"
 #include <iostream>
+#include <cstdlib>
 
 class PageRank {
     public:
@@ -15,4 +16,5 @@ class PageRank {
         std::map<std::string, double> surferCount;
         std::map<std::string, double> original;
         std::map<std::string, double> modified;
+        std::vector<std::string> indexs;
 };
