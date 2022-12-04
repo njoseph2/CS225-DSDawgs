@@ -7,10 +7,10 @@ EXECUTABLE=main
 all: $(EXECUTABLE)
 
 $(EXECUTABLE):
-	$(CC) $(CFLAGS) $(LDFLAGS) $(SOURCES) -o $@
+	$(CC) $(CFLAGS) $(LDFLAGS) $(SOURCES) -o bin/$@
 
 clean:
-	-rm $(EXECUTABLE)
+	-rm bin/$(EXECUTABLE)
 
 tests: tests.cpp
-	$(CC) $(CFLAGS) $(LDFLAGS) graph.cpp CSV.cpp pagerank.cpp $^
+	$(CC) $(CFLAGS) $(LDFLAGS) graph.cpp CSV.cpp $^ -o bin/tests

@@ -5,14 +5,14 @@
 
 #include <vector>
 #include "CSV.h"
-#include "pagerank.h"
+//#include "pagerank.h"
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 //                                Test Cases //
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 TEST_CASE("good tokenization", "[CSV]") {
-  // SECTION("Can use sections") {}
+  // ECTION("Can use sections") {}
   std::vector<std::vector<std::string>> result = readCSV("testing.csv");
   REQUIRE(result[0][0] == "A");
   REQUIRE(result[0][1] == "B");
@@ -26,16 +26,36 @@ TEST_CASE("good tokenization", "[CSV]") {
   REQUIRE(result[4][1] == "E");
 }
 
-TEST_CASE("first iteration", "[pagerank]") {
-  // SECTION("Can use sections") {}
-  std::vector<std::vector<std::string>> file = readCSV("testing.csv");
-  PageRank run;
-  run.integrate(file);
-  run.algorithm();
-  std::map<std::string, double> check = run.getOriginal();
-  REQUIRE(check["A"] == (.2/3) + (.2/2));
-  REQUIRE(check["B"] == (.2/3) + (.2/2));
-  REQUIRE(check["C"] == (.2/2) + (.2/2) + (.2/2));
-  REQUIRE(check["D"] == (.2/3) + (.2/1));
-  REQUIRE(check["E"] == (.2/2));
+TEST_CASE("to Graph", "[CSV]") {
+  // ECTION("Can use sections") {}
+  std::vector<std::vector<std::string>> result = readCSV("testing.csv");
+  Graph* graph = toGraph(result);
+  REQUIRE(graph->vertexExists("A"));
+  REQUIRE(graph->vertexExists("B"));
+  REQUIRE(graph->vertexExists("C"));
+  REQUIRE(graph->vertexExists("D"));
+  REQUIRE(graph->vertexExists("E"));
+  REQUIRE(!graph->vertexExists("F"));
+  REQUIRE(!graph->vertexExists("G"));
+  REQUIRE(graph->edgeExists("E", "D"));
+  REQUIRE(graph->edgeExists("D", "E"));
+  REQUIRE(!graph->edgeExists("C", "E"));
+  REQUIRE(!graph->edgeExists("E", "C"));
+  REQUIRE(graph->edgeExists("A", "B"));
+  REQUIRE(graph->edgeExists("B", "A"));
 }
+
+
+// TEST_CASE("first iteration", "[pagerank]") {
+//   // SECTION("Can use sections") {}
+//   std::vector<std::vector<std::string>> file = readCSV("testing.csv");
+//   PageRank run;
+//   run.integrate(file);
+//   run.algorithm();
+//   std::map<std::string, double> check = run.getOriginal();
+//   REQUIRE(check["A"] == (.2/3) + (.2/2));
+//   REQUIRE(check["B"] == (.2/3) + (.2/2));
+//   REQUIRE(check["C"] == (.2/2) + (.2/2) + (.2/2));
+//   REQUIRE(check["D"] == (.2/3) + (.2/1));
+//   REQUIRE(check["E"] == (.2/2));
+// }
