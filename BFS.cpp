@@ -3,19 +3,54 @@
 #include <fstream>
 #include <unordered_map>
 
-Graph toGraph(std::vector<std::vector<std::string>> csv) {
-        Graph g_(false);
-        unordered_map<Vertex, bool> added;
-        for (auto& row : csv) {
-            if (added[row[0]] == false) {
-                g_.insertVertex(row[0]);
-                added[row[0]] = true;
+ BFS::BFS(Graph* g, Vertex s): g_(g), q(), start(s), step(false), printed(false) {
+    
+ }
+
+void BFS::PrintTraversal() {
+    if (step) {
+        std::cout << "Currently in step by step traversal" << std::endl;
+    }
+    printed = true;
+    q.push(start);
+    visited[start] = true;
+    while (!q.empty()) {
+        Vertex curr = q.front();
+        q.pop();
+        vector<Vertex> neighbors = g_-> getAdjacent(curr);
+        for (Vertex& v: neighbors) {
+            if (!visited[v]) { 
+                q.push(v);
+                visited[v] = true;
             }
-            if (added[row[1]] == false) {
-                    g_.insertVertex(row[1]);
-                    added[row[1]] = true;
-            } 
-            g_.insertEdge(row[0], row[1]);
         }
-        return g_;
+        std::cout << curr << std::endl;
+    }
+}
+
+Vertex BFS::NextVertex() {
+    if (printed) {
+        std::cout << "Printed Traversal" << std::endl;
+        return "";
+    }
+    if (q.empty() && step) {
+        std::cout << "Finished" << std::endl;
+        return "";
+    }
+    if (q.empty()) {
+        q.push(start);
+        visited[start] = true;
+    }
+    step = true;
+    Vertex curr = q.front();
+    q.pop();
+    vector<Vertex> neighbors = g_->getAdjacent(curr);
+    for (Vertex& v: neighbors) {
+        if (!visited[v]) { 
+            q.push(v);
+            visited[v] = true;
+        }
+    }
+    return curr;
+      
 }

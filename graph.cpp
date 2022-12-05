@@ -76,7 +76,6 @@ Graph::Graph(bool weighted, int numVertices, unsigned long seed)
 vector<Vertex> Graph::getAdjacent(Vertex source) const 
 {
     auto lookup = adjacency_list.find(source);
-
     if(lookup == adjacency_list.end())
         return vector<Vertex>();
 

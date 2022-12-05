@@ -2,7 +2,7 @@
 #define CATCH_CONFIG_MAIN
 #endif
 #include "catch.hpp"
-
+#include "BFS.h"
 #include <vector>
 #include "CSV.h"
 //#include "pagerank.h"
@@ -43,6 +43,25 @@ TEST_CASE("to Graph", "[CSV]") {
   REQUIRE(!graph->edgeExists("E", "C"));
   REQUIRE(graph->edgeExists("A", "B"));
   REQUIRE(graph->edgeExists("B", "A"));
+  delete graph;
+}
+
+TEST_CASE("BFS", "[BFS]") {
+  // ECTION("Can use sections") {}
+  std::vector<std::vector<std::string>> result = readCSV("testing.csv");
+  Graph* graph = toGraph(result);
+  BFS b(graph, "A");
+  //std::cout << "works";
+  REQUIRE(b.NextVertex() == "A");
+  REQUIRE(b.NextVertex() == "C");
+  REQUIRE(b.NextVertex() == "B");
+  REQUIRE(b.NextVertex() == "D");
+  //cout << b.NextVertex() << endl;
+  REQUIRE(b.NextVertex() == "E");
+  REQUIRE(b.NextVertex() == "");
+  //REQUIRE(graph->vertexExists("A"));
+  
+  delete graph;
 }
 
 
