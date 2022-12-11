@@ -20,6 +20,13 @@ To push local changes to remote:
 - git commit -m "<message>"
 - git push
 
+## GitHub Important Files 
+1. Data Cleaning/Graph creation: "CSV.cpp"
+2. Traversal: BFS - "BFS.cpp"
+3. Algorithm #1: PageRank - "pagerank.cpp"
+4. Algorithm #2: _________________________________________________________________________
+5. Tests: "tests.cpp"
+
     
 ## Project Proposal
 
