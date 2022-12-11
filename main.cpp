@@ -1,5 +1,6 @@
 #include "CSV.h"
 #include "pagerank.h"
+#include "FDG.h"
 
 int main() {
     std::vector<std::vector<std::string>> file;
@@ -12,5 +13,31 @@ int main() {
     run.algorithm();
     //run.floatSurfer(0.85);
     std::cout << run.expressRanks(1) << std::endl;
+    
+    FDG forces;
+    forces.nodes.resize(run.getEdges().size());
+    int count = 0;
+    std::map<std::string, int> indices;
+    for (auto x : run.getOriginal()) {
+        indices[x.first] = count;
+        forces.nodes[count].name = x.first;
+        forces.nodes[count].rank = x.second;
+        forces.nodes[count].x = 1.0 * count;
+        forces.nodes[count].y = 1.0 * count;
+        count++;
+    }
+    for (std::pair<std::string, std::vector<std::string>> const& x : run.getEdges()) {
+        std::vector<int> vec;
+        for (std::string edge : x.second) {
+            vec.push_back(indices[edge]);
+        }
+        forces.nodes[indices[x.first]].neighbors = vec;
+    }
+    for (unsigned i = 0; i < 1; i++ ) {
+        forces.updatePositions();
+    }
+    for (unsigned i = 0; i < forces.nodes.size(); i++) {
+        std::cout << "Channel: " << forces.nodes[i].name << " | x: " << forces.nodes[i].x << "| y: " << forces.nodes[i].y << std::endl;
+    }
     return 1;
 };

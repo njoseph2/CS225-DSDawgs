@@ -95,3 +95,7 @@ double PageRank::expressRanks(int alg) {
 std::map<std::string, double> PageRank::getOriginal() {
     return original;
 }
+
+std::map<std::string, std::vector<std::string>> PageRank::getEdges() {
+    return edges;
+}

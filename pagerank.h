@@ -10,6 +10,7 @@ class PageRank {
         void algorithm();
         double expressRanks(int alg);
         std::map<std::string, double> getOriginal();
+        std::map<std::string, std::vector<std::string>> getEdges();
         void floatSurfer(double d);
     private:
         std::map<std::string, std::vector<string>> edges;
