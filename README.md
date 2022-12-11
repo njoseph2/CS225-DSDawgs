@@ -1,7 +1,26 @@
 # Group Name: DSDawgs225
 CS225 Project group for the dawgs
 
+## Running Instructions
 
+To get the project on your local machine:
+- Navigate to desired location
+- Type in terminal "git clone https://github.com/njoseph2/CS225-DSDawgs.git"
+
+To make and run executables:
+- Type in terminal "make"
+- type in "bin/tests" or "bin/main" (depending on what you wish to execute)
+
+To get remote changes on your local machine:
+- git pull
+- if you run into error with merging/stashing, do "git stash" then "git pull"
+
+To push local changes to remote:
+- git add . 
+- git commit -m "<message>"
+- git push
+
+    
 ## Project Proposal
 
 ### Leading Question 
