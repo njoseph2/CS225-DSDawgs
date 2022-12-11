@@ -85,7 +85,6 @@ double PageRank::expressRanks(int alg) {
             std::cout << node.first << " - " << rank << std::endl;
             if (node.second > highest) {
                 highest = node.second;
-                highestId = node.first;
             }
         }
         return highest;
