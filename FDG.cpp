@@ -62,11 +62,3 @@ void FDG::updatePositions()
     }
 }
 
- cs225::PNG FDG::visualize()
- {
-    cs225::PNG p;
-    
-
-    return p;
-
- }
