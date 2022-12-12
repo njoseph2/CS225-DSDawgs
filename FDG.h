@@ -3,6 +3,10 @@
 #include <iostream>
 #include <vector>
 
+#include "cs225/PNG.h"
+
+using namespace cs225;
+
 struct Node
 {
     std::string name; // node name
@@ -17,6 +21,7 @@ class FDG {
         double attractiveForce(const Node& a, const Node& b);
         double repulsiveForce(const Node& a, const Node& b);
         void updatePositions();
+        cs225::PNG visualize();
 
         std::vector<Node> nodes;
     private:

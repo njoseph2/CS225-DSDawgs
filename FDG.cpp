@@ -61,3 +61,12 @@ void FDG::updatePositions()
         if (a.y < kMinDistance) { a.y = kMinDistance; }
     }
 }
+
+ cs225::PNG FDG::visualize()
+ {
+    cs225::PNG p;
+    
+
+    return p;
+
+ }
