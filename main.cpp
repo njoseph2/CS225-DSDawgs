@@ -1,6 +1,9 @@
 #include "CSV.h"
 #include "pagerank.h"
 #include "FDG.h"
+#include "visualize.h"
+
+#include "cs225/PNG.h"
 
 int main() {
     std::vector<std::vector<std::string>> file;
@@ -40,4 +43,5 @@ int main() {
         std::cout << "Channel: " << forces.nodes[i].name << " | x: " << forces.nodes[i].x << "| y: " << forces.nodes[i].y << std::endl;
     }
     return 1;
+
 };

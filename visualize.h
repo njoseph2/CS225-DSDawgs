@@ -5,4 +5,4 @@
 
 #include "FDG.h"
 
-cs225::PNG visualize();
+cs225::PNG* visualize(PNG &input);

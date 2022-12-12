@@ -1,4 +1,5 @@
 #include "FDG.h"
+#include <cmath>
 
 // Computes the attractive force between two nodes
 double FDG::attractiveForce(const Node& a, const Node& b)
@@ -6,7 +7,8 @@ double FDG::attractiveForce(const Node& a, const Node& b)
     double dx = a.x - b.x;
     double dy = a.y - b.y;
     double d = dx * dx + dy * dy;
-    return kAttraction * d;
+    //std::cout << d << std::endl;
+    return d / kAttraction;
 }
 
 // Computes the repulsive force between two nodes
@@ -15,7 +17,8 @@ double FDG::repulsiveForce(const Node& a, const Node& b)
     double dx = a.x - b.x;
     double dy = a.y - b.y;
     double d = dx * dx + dy * dy;
-    return kRepulsion / d;
+    std::cout << std::sqrt(d) << std::endl;
+    return kRepulsion / std::sqrt(d);
 }
 
 // Updates the positions of all nodes based on their forces
@@ -38,6 +41,7 @@ void FDG::updatePositions()
             if (b.rank >= a.rank) continue;
 
             double f = repulsiveForce(a, b);
+            f = f / 100;
             fx += f * (a.x - b.x);
             fy += f * (a.y - b.y);
         }
@@ -47,6 +51,7 @@ void FDG::updatePositions()
         {
             Node& b = nodes[j];
             double f = attractiveForce(a, b);
+            f = f / 100;
             fx -= f * (a.x - b.x);
             fy -= f * (a.y - b.y);
         }
@@ -61,4 +66,3 @@ void FDG::updatePositions()
         if (a.y < kMinDistance) { a.y = kMinDistance; }
     }
 }
-
