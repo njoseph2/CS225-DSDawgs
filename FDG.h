@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <vector>
+#include <cstdlib>
 
 struct Node
 {
@@ -20,8 +21,8 @@ class FDG {
 
         std::vector<Node> nodes;
     private:
-        const double kRepulsion = 0.6; // repulsion constant
-        const double kAttraction = 0.1; // attraction constant
+        const double kRepulsion = 4.472135955; // repulsion constant
+        const double kAttraction = 4.472135955; // attraction constant
         const double kMaxDistance = 10.0; // max distance constant
         const double kMinDistance = 0.0; // min distance constant
 };
