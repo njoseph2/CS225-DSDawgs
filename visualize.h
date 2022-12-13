@@ -7,6 +7,6 @@
 #include "cs225/PNG.h"
 #include "lodepng/lodepng.h"
 
-using namespace std;
+using namespace cs225;
 
 cs225::PNG* visualize(PNG &input);
