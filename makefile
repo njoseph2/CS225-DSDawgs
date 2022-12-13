@@ -1,8 +1,8 @@
 # Makefile for PageRank
 CC=g++
 CFLAGS=-std=c++11 -I ./include -g
-SOURCES=main.cpp graph.cpp CSV.cpp BFS.cpp pagerank.cpp FDG.cpp
-TESTSOURCES=graph.cpp CSV.cpp BFS.cpp FDG.cpp
+SOURCES=main.cpp graph.cpp CSV.cpp BFS.cpp pagerank.cpp FDG.cpp cs225/PNG.cpp cs225/HSLAPixel.cpp lodepng/lodepng.cpp
+TESTSOURCES=graph.cpp CSV.cpp BFS.cpp FDG.cpp pagerank.cpp cs225/PNG.cpp cs225/HSLAPixel.cpp lodepng/lodepng.cpp
 EXECUTABLE=main
 
 all: $(EXECUTABLE)
