@@ -10,7 +10,7 @@ int main() {
 
     PageRank run;
     run.integrate(file);
-    run.algorithm();
+    run.algorithm(20);
     run.floatSurfer(0.85);
     run.expressRanks(1);
     run.expressRanks(2);

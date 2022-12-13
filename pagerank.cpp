@@ -13,9 +13,9 @@ void PageRank::integrate(std::vector<std::vector<std::string>> csv) {
     }
 }
 
-void PageRank::algorithm() {
+void PageRank::algorithm(int iter) {
     //The more iterations, the more accurate the rank
-    int iterations = 20;
+    int iterations = iter;
     for (int i = 0; i < iterations; i++) {
         //go through every vertex
         for (auto node : edges) {
@@ -54,11 +54,14 @@ void PageRank::floatSurfer(double d) {
         random = rand() % surferCount.size();
         teleport = 0;
     }
+    for (auto node : surferCount) {
+        double rank = (node.second * 1.0) / (count * 1.0);
+        surferCount[node.first] = rank;
+    }
 }
 
 double PageRank::expressRanks(int alg) {
     double highest = 0;
-    double bestRank = 0;
     std::string highestId;
     if (alg == 1) {
         for (auto node : modified) {
@@ -73,15 +76,13 @@ double PageRank::expressRanks(int alg) {
     } else {
         double highest = 0;
         for (auto node : surferCount) {
-            double rank = (node.second * 1.0) / (count * 1.0);
             //std::cout << node.first << " - " << rank << std::endl;
             if (node.second > highest) {
                 highest = node.second;
-                bestRank = rank;
                 highestId = node.first;
             }
         }
-        std::cout << highestId << " - " << bestRank << std::endl;
+        std::cout << highestId << " - " << highest << std::endl;
         return highest;
     }
     
@@ -89,6 +90,10 @@ double PageRank::expressRanks(int alg) {
 
 std::map<std::string, double> PageRank::getOriginal() {
     return original;
+}
+
+std::map<std::string, double> PageRank::getSurferCount() {
+    return surferCount;
 }
 
 std::map<std::string, std::vector<std::string>> PageRank::getEdges() {

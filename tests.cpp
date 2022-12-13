@@ -5,7 +5,7 @@
 #include "BFS.h"
 #include <vector>
 #include "CSV.h"
-//#include "pagerank.h"
+#include "pagerank.h"
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 //                                Test Cases //
@@ -65,16 +65,61 @@ TEST_CASE("BFS", "[BFS]") {
 }
 
 
-// TEST_CASE("first iteration", "[pagerank]") {
-//   // SECTION("Can use sections") {}
-//   std::vector<std::vector<std::string>> file = readCSV("testing.csv");
-//   PageRank run;
-//   run.integrate(file);
-//   run.algorithm();
-//   std::map<std::string, double> check = run.getOriginal();
-//   REQUIRE(check["A"] == (.2/3) + (.2/2));
-//   REQUIRE(check["B"] == (.2/3) + (.2/2));
-//   REQUIRE(check["C"] == (.2/2) + (.2/2) + (.2/2));
-//   REQUIRE(check["D"] == (.2/3) + (.2/1));
-//   REQUIRE(check["E"] == (.2/2));
-// }
+TEST_CASE("first iteration", "[pagerank]") {
+  // SECTION("Can use sections") {}
+  std::vector<std::vector<std::string>> file = readCSV("testing.csv");
+  PageRank run;
+  run.integrate(file);
+  run.algorithm(1);
+  std::map<std::string, double> check = run.getOriginal();
+  REQUIRE(check["A"] == (.2/3) + (.2/2));
+  REQUIRE(check["B"] == (.2/3) + (.2/2));
+  REQUIRE(check["C"] == (.2/2) + (.2/2) + (.2/2));
+  REQUIRE(check["D"] == (.2/3) + (.2/1));
+  REQUIRE(check["E"] == (.2/2));
+}
+
+TEST_CASE("ranks add up", "[pagerank]") {
+  // SECTION("Can use sections") {}
+  std::vector<std::vector<std::string>> file = readCSV("testing.csv");
+  PageRank run;
+  run.integrate(file);
+  run.algorithm(1);
+  std::map<std::string, double> check = run.getOriginal();
+  double ranks = (check["A"] + check["B"] + check["C"] + check["D"] + check["E"]);
+  bool pass = false;
+  if (ranks >= 0.995 && ranks <= 1.005) {
+    pass = true;
+  }
+  REQUIRE(pass);
+}
+
+TEST_CASE("ranks add up | multiple iterations", "[pagerank]") {
+  // SECTION("Can use sections") {}
+  std::vector<std::vector<std::string>> file = readCSV("testing.csv");
+  PageRank run;
+  run.integrate(file);
+  run.algorithm(20);
+  std::map<std::string, double> check = run.getOriginal();
+  double ranks = (check["A"] + check["B"] + check["C"] + check["D"] + check["E"]);
+  bool pass = false;
+  if (ranks >= 0.995 && ranks <= 1.005) {
+    pass = true;
+  }
+  REQUIRE(pass);
+}
+
+TEST_CASE("ranks add up | floatSurfer", "[pagerank]") {
+  // SECTION("Can use sections") {}
+  std::vector<std::vector<std::string>> file = readCSV("testing.csv");
+  PageRank run;
+  run.integrate(file);
+  run.floatSurfer(0.85);
+  std::map<std::string, double> check = run.getSurferCount();
+  double ranks = (check["A"] + check["B"] + check["C"] + check["D"] + check["E"]);
+  bool pass = false;
+  if (ranks >= 0.995 && ranks <= 1.005) {
+    pass = true;
+  }
+  REQUIRE(pass);
+}
