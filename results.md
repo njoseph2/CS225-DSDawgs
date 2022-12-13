@@ -6,7 +6,7 @@ The answer to your leading question – You should direct address your proposed 
 
 Output/correctness of Algorithms-
 
-# Force Directed Algorithm
+# Algorithm Discussion
 
 PageRank - Used to highlight most favored streamers based solely on mutual viewership with other users, where more popular streamers will land. In addition, this algorithm's intended use was to further simplify the way consumers could interact with our code, being able to better understand streamer relationships.
 
