@@ -9,4 +9,4 @@
 
 using namespace cs225;
 
-cs225::PNG* visualize(PNG &input);
+

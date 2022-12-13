@@ -11,6 +11,8 @@
 //                                Test Cases //
 /////////////////////////////////////////////////////////////////////////////////////////////
 
+
+// CSV Tests
 TEST_CASE("good tokenization", "[CSV]") {
   // ECTION("Can use sections") {}
   std::vector<std::vector<std::string>> result = readCSV("testing.csv");
@@ -46,6 +48,8 @@ TEST_CASE("to Graph", "[CSV]") {
   delete graph;
 }
 
+
+//BFS Tests
 TEST_CASE("BFS", "[BFS]") {
   // ECTION("Can use sections") {}
   std::vector<std::vector<std::string>> result = readCSV("testing.csv");
@@ -65,6 +69,7 @@ TEST_CASE("BFS", "[BFS]") {
 }
 
 
+//Pagerank Tests
 TEST_CASE("first iteration", "[pagerank]") {
   // SECTION("Can use sections") {}
   std::vector<std::vector<std::string>> file = readCSV("testing.csv");
@@ -122,4 +127,26 @@ TEST_CASE("ranks add up | floatSurfer", "[pagerank]") {
     pass = true;
   }
   REQUIRE(pass);
+}
+
+
+// FDG Tests
+TEST_CASE("attractive force", "[FDG]") {
+  // SECTION("Can use sections") {}
+  std::vector<std::vector<std::string>> file = readCSV("testing.csv");
+  FDG run;
+  Node n1;
+  n.x = 2;
+  n.y = 3
+
+  Node n2;
+  n.x = 4;
+  n.y = 7;
+
+  double f = attractiveForce(n1, n2);
+  double difX = n1.x - n2.x;
+  double difY = n1.y - n2.y;
+
+  REQUIRE(f ==  pow(difX,2.0) + pow(difY, 2.0));
+
 }

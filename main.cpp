@@ -44,6 +44,30 @@ int main() {
     for (unsigned i = 0; i < forces.nodes.size(); i++) {
         std::cout << "Channel: " << forces.nodes[i].name << " | x: " << forces.nodes[i].x << "| y: " << forces.nodes[i].y << std::endl;
     }
-    return 1;
+    // return 1;
+
+    // testing visualize
+    FDG f;
+    Node n1;
+    n1.name = "1";
+    n1.neighbors.push_back(1);
+    n1.neighbors.push_back(2);
+    f.nodes.push_back(n1);
+    Node n2;
+    n2.name = "2";
+    n1.neighbors.push_back(0);
+    n1.neighbors.push_back(2);
+    f.nodes.push_back(n2);
+    Node n3;
+    n3.name = "3";
+    n1.neighbors.push_back(0);
+    n1.neighbors.push_back(1);
+    f.nodes.push_back(n3);
+    f.updatePositions();
+
+    for (Node n : f.nodes){
+        std::cout << n.name << std::endl;
+    }
+    // f.visualize();
 
 };
