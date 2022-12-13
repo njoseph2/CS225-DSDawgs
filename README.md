@@ -1,5 +1,9 @@
 # Group Name: DSDawgs225
-CS225 Project group for the dawgs
+Contributors:
+- Daniel Bezugliy (dbezu2)
+- Faaris Shaik (faariss2)
+- Nathan Joseph (njoseph4)
+- Steven Isaac (sisaa2)
 
 ## Running Instructions
 
