@@ -32,12 +32,12 @@ To push local changes to remote:
 5. Tests: "tests.cpp"
   
 ## File io CSV.h/cpp
-  Our CSV reader has two function. First it contains readCSV(), which takes a CSV file of channel ids and returns 2D vector of chanel ids representing the the rows and columns of the CSV file. It also contains a toGraph function which takes a 2D vector of channel ids and creates a Graph out of it, returning a pointer to the Graph.
+  Our CSV reader has two function. First it contains **readCSV()**, which takes a CSV file of channel ids and returns 2D vector of chanel ids representing the the rows and columns of the CSV file. It also contains a **toGraph()** function which takes a 2D vector of channel ids and creates a Graph out of it, returning a pointer to the Graph.
 
 ## Pagerank pagerank.h/cpp
 
 ## BFS BFS.h/cpp
-  Our BFS class traverses a given Graph, starting at a given Vertex. It contains two functions, PrintTraversal(), which prints out the entire traversal at once, and NextVertex(), which traverses one vertex at a time, returning the next vertex in the BFS traversal each time it is called. Each instance of the class can only do one of these traversals, so if you want to traverse a Graph both ways, you must create two instances of BFS.
+  Our BFS class traverses a given Graph, starting at a given Vertex. It contains two functions, **PrintTraversal()**, which prints out the entire traversal at once, and **NextVertex()**, which traverses one vertex at a time, returning the next vertex in the BFS traversal each time it is called. Each instance of the class can only do one of these traversals, so if you want to traverse a Graph both ways, you must create two instances of BFS.
 
 ## Force Directed FDG.h/cpp
 1. 
