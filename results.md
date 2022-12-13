@@ -1,11 +1,3 @@
-A written report. In addition to your code, your Github repository must contain a results.md file which describes:
-
-The output and correctness of each algorithm – You should summarize, visualize, or highlight some part of the full-scale run of each algorithm. Additionally, the report should briefly describe what tests you performed to confirm that each algorithm was working as intended.
-
-The answer to your leading question – You should direct address your proposed leading question. How did you answer this question? What did you discover? If your project was ultimately unsuccessful, give a brief reflection about what worked and what you would do differently as a team.
-
-Output/correctness of Algorithms- 
-
 # Traversal Discussion
 
 Breadth First Search- We used BFS traversal by iniially reading the CSV file to find every Node and edge that connected to their respective Node. We then maintain the Traversal using a queue and a map to maintain visited Nodes, and this was our way of reading the CSV file and ensuring all Nodes were traversed for our future implementations using the algorithms discussed later. We use methods such as "maxVertex()" and "printTraversal()" to determine whether the traversal worked properly, and ultimately based on the test csaes conducted, working around edge cases, we successfully implemented BFS, a primary tool used for traversing the Graph.
@@ -20,4 +12,6 @@ Force-directed Graph - Force-directed graph algorithm work in co-step with PageR
 
 ![image](https://user-images.githubusercontent.com/87607418/207226870-2479699d-3942-4f9e-99d1-73f5da8d564c.png)
 
-The image above displays the top two most viewed channels (also known as the most popular). Although these numbers may be considered no, since all ranks add up to one, these are the largest verticies of the entire graph (despite the seemingly low number). 
+The image above displays the top two most important channels as determined by the two methods of PageRank. Although the ranks assigned may be considered small, since all ranks add up to one, these are the largest verticies of the entire graph (despite the seemingly low number). We would love to know what these channels are, but we are unable to as shown in the image below. We determined that this dataset is outdated and that Twitch has changed the way they deal with channel IDs (especially after Twitch faced a massive security breach in late 2021).
+
+![image](https://user-images.githubusercontent.com/77647988/207232139-a65c319b-3fa3-45f9-a082-e60456275007.png)

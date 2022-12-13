@@ -71,7 +71,7 @@ double PageRank::expressRanks(int alg) {
                 highestId = node.first;
             }
         }
-        std::cout << highestId << " - " << highest << std::endl;
+        std::cout << "Method 1: Most Important ChannelID - " << highestId << " | Rank - " << highest << std::endl;
         return highest;
     } else {
         double highest = 0;
@@ -82,7 +82,7 @@ double PageRank::expressRanks(int alg) {
                 highestId = node.first;
             }
         }
-        std::cout << highestId << " - " << highest << std::endl;
+        std::cout << "Method 2: Most Important ChannelID - " << highestId << " | Rank - " << highest << std::endl;
         return highest;
     }
     
