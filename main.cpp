@@ -7,9 +7,11 @@
 
 int main() {
     std::vector<std::vector<std::string>> file;
+    // COMMENT THIS IF YOU WANT TO TO RUN THE TWITCH DATASET
     file = readCSV("testing.csv");
+
+    // UNCOMMENT BELLOW CODE IF YOU WANT TO RUN THE TWITCH DATASET (TAKES A LONG TIME TO RUN)
     //file = readCSV("large_twitch_edges.csv");
-    //std::cout << file.size() << std::endl;
 
     PageRank run;
     run.integrate(file);
