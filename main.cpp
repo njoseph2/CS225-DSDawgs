@@ -11,8 +11,9 @@ int main() {
     PageRank run;
     run.integrate(file);
     run.algorithm();
-    //run.floatSurfer(0.85);
-    std::cout << run.expressRanks(1) << std::endl;
+    run.floatSurfer(0.85);
+    run.expressRanks(1);
+    run.expressRanks(2);
     
     FDG forces;
     forces.nodes.resize(run.getEdges().size());

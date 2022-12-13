@@ -4,33 +4,18 @@ void PageRank::integrate(std::vector<std::vector<std::string>> csv) {
     for (std::vector<std::string> edge : csv) {
         edges[edge[0]].push_back(edge[1]);
         edges[edge[1]].push_back(edge[0]);
-        // std::string node1 = edge[0];
-        // std::string node2 = edge[1];
-        // if (edges.find(node1) != edges.end()) {
-        //     edges[node1].push_back(node2);
-        // } else 
-        
-        // if (edges.find(node2) != edges.end()) {
-        //     edges[node2].push_back(node1);
-        // }
     }
     for (auto const& x : edges) {
         original[x.first] = 1.0 / edges.size();
         modified[x.first] = 1.0 / edges.size();
-        surferCount[x.first] = 0;
+        surferCount[x.first] = 0.0;
         indexs.push_back(x.first);
-
-        // std::cout << x.first << " (";
-        // for (std::string relation : x.second) {
-        //     std::cout << relation;
-        // }
-        // std::cout << ") - " << modified[x.first] << std::endl;
     }
 }
 
 void PageRank::algorithm() {
     //The more iterations, the more accurate the rank
-    int iterations = 3;
+    int iterations = 20;
     for (int i = 0; i < iterations; i++) {
         //go through every vertex
         for (auto node : edges) {
@@ -48,45 +33,55 @@ void PageRank::algorithm() {
 
 //Implementation of the pagerank surfer model
 void PageRank::floatSurfer(double d) {
-    int s = surferCount.size();
-    int random = rand() % s;
+    unsigned seed = time(0);
+    srand(seed);
+    int random = rand() % surferCount.size();
+    //std::cout << random << std::endl;
     int teleport = 0;
-    int iterations = 20;
+    int iterations = 50;
     std::string store;
     for (int i = 0; i < iterations; i++) {
         store = indexs[random];
-        while (teleport < (int)(d * 100)) {
+        while (teleport <= (int)(d * 100)) {
             surferCount[store] += 1;
-            int next = rand() % edges[indexs[random]].size();
-            int count = 0;
-            store = edges[indexs[random]].at(next);
+            count++;
+            int next = rand() % edges[store].size();
+            store = edges[store].at(next);
+            //std::cout << store << std::endl;
             teleport = (rand() % 100) + 1;
+            //std::cout << teleport << std::endl;
         }
-        random = rand() % s;
+        random = rand() % surferCount.size();
+        teleport = 0;
     }
 }
 
 double PageRank::expressRanks(int alg) {
+    double highest = 0;
+    double bestRank = 0;
+    std::string highestId;
     if (alg == 1) {
-        double highest = 0;
-        std::string highestId;
         for (auto node : modified) {
-            std::cout << node.first << " - " << node.second << std::endl;
+            //std::cout << node.first << " - " << node.second << std::endl;
             if (node.second > highest) {
                 highest = node.second;
                 highestId = node.first;
             }
         }
+        std::cout << highestId << " - " << highest << std::endl;
         return highest;
     } else {
         double highest = 0;
         for (auto node : surferCount) {
-            double rank = (node.second * 1.0) / surferCount.size();
-            std::cout << node.first << " - " << rank << std::endl;
+            double rank = (node.second * 1.0) / (count * 1.0);
+            //std::cout << node.first << " - " << rank << std::endl;
             if (node.second > highest) {
                 highest = node.second;
+                bestRank = rank;
+                highestId = node.first;
             }
         }
+        std::cout << highestId << " - " << bestRank << std::endl;
         return highest;
     }
     

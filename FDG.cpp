@@ -17,7 +17,7 @@ double FDG::repulsiveForce(const Node& a, const Node& b)
     double dx = a.x - b.x;
     double dy = a.y - b.y;
     double d = dx * dx + dy * dy;
-    std::cout << std::sqrt(d) << std::endl;
+    //std::cout << std::sqrt(d) << std::endl;
     return kRepulsion / std::sqrt(d);
 }
 

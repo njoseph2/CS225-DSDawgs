@@ -31,13 +31,13 @@ std::vector<std::vector<std::string>> readCSV(const std::string & file) {
         }
     }
 
-    for (auto a : result) {
-        for (auto b : a) {
-            std::cout << b << std::endl;
-        }
-        std::cout << "NEXT" << std::endl;
-    }
-    std::cout << "END" << std::endl;
+    // for (auto a : result) {
+    //     for (auto b : a) {
+    //         std::cout << b << std::endl;
+    //     }
+    //     std::cout << "NEXT" << std::endl;
+    // }
+    // std::cout << "END" << std::endl;
     return result;
 }
 
