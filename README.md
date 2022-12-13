@@ -28,7 +28,7 @@ To push local changes to remote:
 1. Data Cleaning/Graph creation: "CSV.cpp"
 2. Traversal: BFS - "BFS.cpp"
 3. Algorithm #1: PageRank - "pagerank.cpp"
-4. Algorithm #2: _________________________________________________________________________
+4. Algorithm #2: Force Directed Graph - "FDG.cpp", "visualize.cpp"
 5. Tests: "tests.cpp"
 
     
