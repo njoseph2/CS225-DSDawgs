@@ -30,3 +30,13 @@ To push local changes to remote:
 3. Algorithm #1: PageRank - "pagerank.cpp"
 4. Algorithm #2: Force Directed Graph - "FDG.cpp", "visualize.cpp"
 5. Tests: "tests.cpp"
+  
+  ## File io CSV.h/cpp
+
+## Pagerank pagerank.h/cpp
+
+## BFS BFS.h/cpp
+1. 
+
+## Force Directed FDG.h/cpp
+1. 
