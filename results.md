@@ -1,11 +1,3 @@
-A written report. In addition to your code, your Github repository must contain a results.md file which describes:
-
-The output and correctness of each algorithm – You should summarize, visualize, or highlight some part of the full-scale run of each algorithm. Additionally, the report should briefly describe what tests you performed to confirm that each algorithm was working as intended.
-
-The answer to your leading question – You should direct address your proposed leading question. How did you answer this question? What did you discover? If your project was ultimately unsuccessful, give a brief reflection about what worked and what you would do differently as a team.
-
-Output/correctness of Algorithms- 
-
 # Traversal Discussion
 
 Breadth First Search- We used BFS traversal by iniially reading the CSV file to find every Node and edge that connected to their respective Node. We then maintain the Traversal using a queue and a map to maintain visited Nodes, and this was our way of reading the CSV file and ensuring all Nodes were traversed for our future implementations using the algorithms discussed later. We use methods such as "maxVertex()" and "printTraversal()" to determine whether the traversal worked properly, and ultimately based on the test csaes conducted, working around edge cases, we successfully implemented BFS, a primary tool used for traversing the Graph.
