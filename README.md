@@ -40,4 +40,4 @@ To push local changes to remote:
   Our BFS class traverses a given Graph, starting at a given Vertex. It contains two functions, **PrintTraversal()**, which prints out the entire traversal at once, and **NextVertex()**, which traverses one vertex at a time, returning the next vertex in the BFS traversal each time it is called. Each instance of the class can only do one of these traversals, so if you want to traverse a Graph both ways, you must create two instances of BFS. An example of how this works can be seen in our test cases.
 
 ## Force Directed FDG.h/cpp
-1. 
+  Our Force Directed Graph class (or FDG) "plots" nodes by assigning each an x and y coordinate, and then calculates attractive and repulsive forces between the nodes and their neighbors. It contains three main functions: **attractiveForce()** and **repulsiveForce()**, which each take in two const Node references and return the respective force between the two nodes. 
