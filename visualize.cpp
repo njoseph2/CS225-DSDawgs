@@ -1,6 +1,7 @@
 #include <visualize.h>
 
- cs225::PNG* FDG::visualize(PNG &input)
+// Prototype - limited testing conducted for this function
+cs225::PNG* FDG::visualize(PNG &input)
  {
 
     cs225::PNG* p = new cs225::PNG(200,200);
