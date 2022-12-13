@@ -5,6 +5,8 @@ Contributors:
 - Nathan Joseph (njoseph4)
 - Steven Isaac (sisaa2)
 
+Presentation: https://mediaspace.illinois.edu/media/t/1_jeknfhgx
+
 ## Running Instructions
 
 To get the project on your local machine:
