@@ -14,6 +14,7 @@ To get the project on your local machine:
 To make and run executables:
 - Type in terminal "make"
 - type in "bin/tests" or "bin/main" (depending on what you wish to execute)
+- (CURRENTLY, OUR PROGAM USES THE TESTING.CSV TO OUTPUT DATA. IF YOU WANT TO USE THE TWITCH DATASET, GO TO MAIN.CPP AND FOLLOW THE COMMENTED INSTRUCTIONS. NOTE THAT DOING THIS WILL RESULT IN A LONG RUN TIME SINCE THERE ARE SO MANY TWITCH CHANNELS)
 
 To get remote changes on your local machine:
 - git pull
