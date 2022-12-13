@@ -12,4 +12,6 @@ Force-directed Graph - Force-directed graph algorithm work in co-step with PageR
 
 ![image](https://user-images.githubusercontent.com/87607418/207226870-2479699d-3942-4f9e-99d1-73f5da8d564c.png)
 
-The image above displays the top two most viewed channels (also known as the most popular). Although these numbers may be considered no, since all ranks add up to one, these are the largest verticies of the entire graph (despite the seemingly low number). 
+The image above displays the top two most important channels as determined by the two methods of PageRank. Although the ranks assigned may be considered small, since all ranks add up to one, these are the largest verticies of the entire graph (despite the seemingly low number). We would love to know what these channels are, but we are unable to as shown in the image below. We determined that this dataset is outdated and that Twitch has changed the way they deal with channel IDs (especially after Twitch faced a massive security breach in late 2021).
+
+![image](https://user-images.githubusercontent.com/77647988/207232139-a65c319b-3fa3-45f9-a082-e60456275007.png)
