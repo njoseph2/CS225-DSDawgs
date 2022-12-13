@@ -3,6 +3,7 @@
 #include "BFS.h"
 #include <iostream>
 #include <cstdlib>
+#include <ctime>
 
 class PageRank {
     public:
@@ -18,4 +19,5 @@ class PageRank {
         std::map<std::string, double> original;
         std::map<std::string, double> modified;
         std::vector<std::string> indexs;
+        int count = 0;
 };

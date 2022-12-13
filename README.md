@@ -1,5 +1,9 @@
 # Group Name: DSDawgs225
-CS225 Project group for the dawgs
+Contributors:
+- Daniel Bezugliy (dbezu2)
+- Faaris Shaik (faariss2)
+- Nathan Joseph (njoseph4)
+- Steven Isaac (sisaa2)
 
 ## Running Instructions
 
@@ -24,7 +28,7 @@ To push local changes to remote:
 1. Data Cleaning/Graph creation: "CSV.cpp"
 2. Traversal: BFS - "BFS.cpp"
 3. Algorithm #1: PageRank - "pagerank.cpp"
-4. Algorithm #2: Force-Directed Graph Drawing - "FDG.cpp" and "visualize.cpp"
+4. Algorithm #2: Force Directed Graph - "FDG.cpp", "visualize.cpp"
 5. Tests: "tests.cpp"
 
     

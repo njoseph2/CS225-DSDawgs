@@ -14,19 +14,21 @@ int main() {
     PageRank run;
     run.integrate(file);
     run.algorithm();
-    //run.floatSurfer(0.85);
-    std::cout << run.expressRanks(1) << std::endl;
+    run.floatSurfer(0.85);
+    run.expressRanks(1);
+    run.expressRanks(2);
     
     FDG forces;
     forces.nodes.resize(run.getEdges().size());
     int count = 0;
     std::map<std::string, int> indices;
+    double size = run.getOriginal().size() * 1.0;
     for (auto x : run.getOriginal()) {
         indices[x.first] = count;
         forces.nodes[count].name = x.first;
         forces.nodes[count].rank = x.second;
-        forces.nodes[count].x = 1.0 * count;
-        forces.nodes[count].y = 1.0 * count;
+        forces.nodes[count].x = double(std::rand()) / (double(RAND_MAX) + 1.0) * size;
+        forces.nodes[count].y = double(std::rand()) / (double(RAND_MAX) + 1.0) * size;
         count++;
     }
     for (std::pair<std::string, std::vector<std::string>> const& x : run.getEdges()) {
@@ -36,7 +38,7 @@ int main() {
         }
         forces.nodes[indices[x.first]].neighbors = vec;
     }
-    for (unsigned i = 0; i < 1; i++ ) {
+    for (unsigned i = 0; i < 30; i++ ) {
         forces.updatePositions();
     }
     for (unsigned i = 0; i < forces.nodes.size(); i++) {
